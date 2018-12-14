@@ -10,8 +10,6 @@ public interface StudentsDao {
     void addStudent(Student pupil);
     Pupil getStudentAt(int index);
     void removeStudentAt(int index);
-
     void updateAllStudents(List<Student> pupils);
-
     List<Student> getAllStudents();
 }

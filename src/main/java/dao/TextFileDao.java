@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TextFileDao implements StudentsDao {
-
+//запись в файл
     private File file;
 
     public TextFileDao(String filePath){
@@ -63,7 +63,7 @@ public class TextFileDao implements StudentsDao {
         List<Student> students = new ArrayList<>();
 
         FileReader fileReader = null;
-        BufferedReader reader = null;
+        BufferedReader reader = null;// чтение
         try {
             fileReader = new FileReader(file);
             reader = new BufferedReader(fileReader);
@@ -88,7 +88,7 @@ public class TextFileDao implements StudentsDao {
     }
 
     private String studentToLine(Student student){
-        StringBuilder line = new StringBuilder();
+        StringBuilder line = new StringBuilder(); //добавление строки
 
         line.append(student.getSecondName());
         line.append(" ").append(student.getSubjectsCount()).append(" ");

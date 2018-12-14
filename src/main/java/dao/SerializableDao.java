@@ -14,14 +14,12 @@ public class SerializableDao implements StudentsDao {
     public SerializableDao(String filePath){
         file = new File(filePath);
     }
-
     @Override
     public void addStudent(Student pupil) {
         List<Student> pupils = getAllStudents();
         pupils.add(pupil);
         updateAllStudents(pupils);
     }
-
     @Override
     public Pupil getStudentAt(int index) {
         return getAllStudents().get(index);
@@ -49,7 +47,7 @@ public class SerializableDao implements StudentsDao {
             } catch (Exception e) {}
         }
     }
-
+//считывание данных
     @Override
     public List<Student> getAllStudents() {
         FileInputStream fout = null;

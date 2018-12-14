@@ -32,10 +32,14 @@ public class ChartApplication extends Application {
     private TableView<Data> table;
     private LineChart<Number, Number> lineChart;
 
-  private static final Function<Double, Double> FUNCTION = x -> x * x * Math.sin(x) + 2 * x;
+    private static final Function<Double, Double> FUNCTION = x -> x * x * Math.sin(x) + 2 * x;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+//}
 
-  //настройки окна
+    //настройки окна
     @Override
     public void start(Stage stage) {
 
@@ -80,7 +84,8 @@ public class ChartApplication extends Application {
         Scene scene = new Scene(layout, 500, 400);
         stage.setScene(scene);
     }
-//отрисовка графика
+
+    //отрисовка графика
     private LineChart<Number, Number> createLineChart() {
         NumberAxis xAxis = new NumberAxis();
         xAxis.setTickLength(0);
@@ -92,7 +97,8 @@ public class ChartApplication extends Application {
 
         return lineChart;
     }
-//добавление серии точек
+
+    //добавление серии точек
     private Series<Number, Number> createSeries(ObservableList<Data> data) {
         Series<Number, Number> series = new Series<>();
         for (Data point : data) {
@@ -151,7 +157,4 @@ public class ChartApplication extends Application {
         lineChart.getData().add(createSeries(table.getItems()));
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
